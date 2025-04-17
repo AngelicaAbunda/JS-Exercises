@@ -213,8 +213,14 @@
 // -removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']) => ['apple', 'egg', 'ham']
 // 11t 15. Arrays have a method called .reverse() which reverses the order of the values in the array. Using .reverse(), update exercise 11s to only remove the last 2 eggs from the array.
 // -removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']) => ['egg', 'apple', 'ham']
+// 11u 16. in exercise 11t, one problem with .reverse() is that it doesn't create a copy of the array it is reversing. It modifies the original array. Create a function deos not modify the original array. (Hint: use the .slice() method to create a copy of an array's values).
+// -console.log(removeEgg(foods));
+// -console.log(foods)
+   
     function removeEgg(foods) {
-      const reversedFoods = foods.reverse();
+      const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+      const foodsCopy = foods.slice();
+      const reversedFoods = foodsCopy.reverse();
       const result = [];
       let eggsRemoved = 0;
       for (let i = 0; i < reversedFoods.length; i++) {
@@ -226,7 +232,10 @@
       }
       return result.reverse();
     }
-    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+    console.log(removeEgg(foods));
+    console.log(foods)
+
+    
 
 
 
