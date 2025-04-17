@@ -210,12 +210,15 @@
 // 11r 13. Create a function removeEgg(foods) that takes an array of strings and returns an array where the string 'egg'. if it is 'egg'. use 'continue;' to skip it. if it's not 'egg', add it to the result).
 // -removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']) => ['apple', 'ham']
 // 11s 14. Update exercise 11r to only remove the first 2 eggs from the array.
+// -removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']) => ['apple', 'egg', 'ham']
+// 11t 15. Arrays have a method called .reverse() which reverses the order of the values in the array. Using .reverse(), update exercise 11s to only remove the last 2 eggs from the array.
+// -removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']) => ['egg', 'apple', 'ham']
     function removeEgg(foods) {
       const reversedFoods = foods.reverse();
       const result = [];
       let eggsRemoved = 0;
-      for (let i = 0; i < foods.reverse; i++) {
-        if (reversedFoods === 'egg' && eggsRemoved < 2) {
+      for (let i = 0; i < reversedFoods.length; i++) {
+        if (reversedFoods[i] === 'egg' && eggsRemoved < 2) {
           eggsRemoved++;
           continue;
         }
@@ -224,6 +227,8 @@
       return result.reverse();
     }
     console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+
 
     
 
